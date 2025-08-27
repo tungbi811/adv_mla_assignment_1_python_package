@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "amla_at1_25608516"
-version = "0.1.0"
+version = "2025.0.1.1"
 description = "assignment 1 python package"
 authors = ["duy tung nguyen"]
 license = "MIT"
@@ -18,6 +18,9 @@ lightgbm = "4.4.0"
 lime = "0.2.0.1"
 wandb = "0.17.4"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -5,16 +5,13 @@ from typing import Dict, List, Any
 from sklearn.base import clone
 from sklearn.metrics import get_scorer
 import joblib
+from pathlib import Path
 
 
-def grid_search(
-    model,
-    param_grid: Dict[str, List[Any]],
-    X_train, y_train,
-    X_val, y_val,
-    scoring: str = "accuracy"
-) -> List[Dict[str, Any]]:
-    """Grid search over all param combinations with progress printing."""
+def grid_search(model, param_grid: Dict[str, List[Any]], X_train, y_train, X_val, y_val,scoring: str = "accuracy") -> List[Dict[str, Any]]:
+    """
+    Grid search over all param combinations with progress printing.
+    """
     scorer = get_scorer(scoring)
     results = []
 

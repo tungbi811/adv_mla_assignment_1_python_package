@@ -73,7 +73,7 @@ def test_random_search_basic(iris_data, capsys):
     captured = capsys.readouterr()
     assert "[RandomSearch]" in captured.out
 
-
+@pytest.fixture
 def iris_model(tmp_path):
     """Train a simple LogisticRegression model on iris dataset."""
     data = load_iris()
