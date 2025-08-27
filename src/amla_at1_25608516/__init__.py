@@ -1,3 +1,1 @@
-# read version from installed package
-from importlib.metadata import version
-__version__ = version("amla_at1_25608516")
+from data.sets import load_data
