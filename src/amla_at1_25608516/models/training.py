@@ -66,13 +66,12 @@ def random_search(
     seed: int = 42,
 ):
     """Random search that supports scipy.stats distributions and lists."""
-    np_rng = np.random.default_rng(seed)
     scorer = get_scorer(scoring)
     results = []
 
     keys = list(param_distributions.keys())
     for i in range(1, n_iter + 1):
-        params = {k: _sample_value(param_distributions[k], np_rng) for k in keys}
+        params = {k: _sample_value(param_distributions[k], np.random) for k in keys}
         print(f"  → ({i}/{n_iter}) Testing params: {params}")
 
         m = clone(model).set_params(**params)
